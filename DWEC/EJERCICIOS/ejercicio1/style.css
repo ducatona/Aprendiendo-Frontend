@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.links-list {
+    list-style-type: none; /* Quitar los puntos de la lista */
+    padding: 0;
+}
+
+.links-list li {
+    margin-bottom: 20px; /* Espaciado entre cada conjunto de enlace y descripción */
+}
+
+.links-list a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+    display: block; /* Mostrar el enlace como bloque */
+}
+
+.description {
+    margin: 0   ;
+    margin-left: 20px; /* Desplazamiento a la derecha */
+    color: #555;
+}
