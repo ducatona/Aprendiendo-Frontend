@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Hoja03_PHP_01</title>
 </head>
 
 <body>
@@ -59,7 +59,7 @@
 
 
 
-<!--Ejercicio 2 -->
+    <!--Ejercicio 2 -->
     <?php
 
 
@@ -71,46 +71,121 @@
         }
     }
 
-print ("El resultado de la suma del 10 al 100 de los numeros pares naturales es: $suma");
+    print("El resultado de la suma del 10 al 100 de los numeros pares naturales es: $suma");
 
     ?>
 
 
 
-<!--Ejercicio 3-->
- 
-
-<?php
+    <!--Ejercicio 3-->
 
 
+    <?php
+
+    function esCapicua($numero)
+    {
+        //convertimos el numero a cadena
+        $cadena = strval($numero);
+        //cadena Invertida
+        $cadenaInvertida =   strrev($cadena);
+
+        //comparamos
+        if ($cadena == $cadenaInvertida) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    $numeroPrueba = 101;
+
+    if (esCapicua($numeroPrueba)) {
+        print "El numero $numeroPrueba es capicua";
+    } else {
+        print "El numero $numeroPrueba no es capicua";
+    }
 
 
+    ?>
 
 
-function esCapicua($numero){
-//convertimos el numero a cadena
- $cadena = strval($numero);
-//cadena Invertida
- $cadenaInvertida =   strrev($cadena);
+    <!-- Ejercicio 4 -->
 
- //comparamos
- if($cadena == $cadenaInvertida){
-   return true;
- }else{
-    return false;
- }
-}
-$numeroPrueba = 281128;
+    <?php
 
-if(esCapicua($numeroPrueba)){
-    print"El numero $numeroPrueba es capicua";
+    for ($a = 100; $a < 999; $a++) {
 
-}else{
-    print"El numero $numeroPrueba no es capicua";
-}
+        if (esCapicua($a)) {
+            print($a);
+        }
+    }
 
+    ?>
+
+    <!-- Ejercicio 5 -->
+
+    <?php
+
+    function ComprobacionSF($numero)
+    {
+
+
+        $numeroCadena = strval($numero);
+        $producto = 1;
+        $suma = 0;
+
+        for ($i = 0; $i < strlen($numeroCadena); $i++) {
+
+            $caracter = intval($numeroCadena[$i]);
+            $suma += $caracter;
+            $producto *= $caracter;
+        }
+
+        if ($suma == $producto) {
+
+            return true;
+        } else {
+            return false;
+        }
+    };
+
+    $numeroPrueba = 123;
+
+    if (ComprobacionSF($numeroPrueba)) {
+        print "Cumple con lo solicitado";
+    } else {
+
+        print "no cumple con lo solicitado";
+    }
+
+    ?>
+
+    <!--Ejercicio 6 -->
+
+    <?php
+
+
+  
+    function fibonacci($n){
+
+     $a = 0;
+     $b = 1;
+
+
+    }
+    
+    
+
+
+    
 
 ?>
+
+
+
+
+
+
+
 
 
 
