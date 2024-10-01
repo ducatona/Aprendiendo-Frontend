@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    
+    , initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formularios 2</title>
+</head>
+
+<body>
+
+
+
+    <fieldset>
+
+        <legend>Información Personal</legend>
+
+        <fieldset>
+
+            <legend>Datos Básicos</legend>
+
+
+            <label for="nombre">Nombre</label>
+            <input type="text" placeholder="Escribe tu Nombre">
+<br>
+<br>
+            <label for="apellido">Apellido</label> 
+            <input type="text" placeholder="Escribe tu apellido">
+            <br>
+            <br>
+            <label for="CorreoElectronco">Correo Electronico</label>
+            <input type="email" name="" id="">
+            <br>
+            <br>
+            <label for="telefono">Teléfono</label>
+            <input type="number" name="n" id="n" placeholder="600000000" pattern=" [0-9] {9}">
+            <br>
+            <br>
+
+        </fieldset>
+        <fieldset>
+
+            <legend>Detalles Adicionales</legend>
+
+            <label for="g">Género</label>
+            <br>
+            <input type="radio" name="1" id="1"> Masculino
+            <br>
+            <input type="radio" name="1" id="2"> Femenino
+
+<br><br>
+            Fecha de nacimiento: <input type="date" name="" id="">
+            <br>
+            <br>
+            Nacionalidad:
+           <input type="text" list="nacionalidades" placeholder="Selecciona o escribe tu pais">
+            <datalist id="nacionalidades">
+                <option value="Argentina">
+                <option value="Brasil">
+                <option value="Chile">
+                <option value="Colombia">
+                <option value="España">
+                <option value="Francia">
+                <option value="México">
+                <option value="Perú">
+                <option value="Reino Unido">
+                <option value="Estados Unidos">
+            </datalist>
+
+<br><br>
+
+        </fieldset>
+
+
+
+
+
+
+
+    </fieldset>
+
+
+    </fieldset>
+    <fieldset>
+
+
+
+        <legend>Intereses y Habilidades</legend>
+
+
+        <fieldset>
+
+            <legend>Intereses</legend>
+
+            Selecciona tus Intereses:
+            <br>
+            <input type="checkbox" name="d" id="1"> Deporte
+            <br>
+            <input type="checkbox" name="m" id="2"> Música
+            <br>
+            <input type="checkbox" name="a" id="3"> Arte
+
+<br><br>
+
+
+        </fieldset>
+        <fieldset>
+
+            <legend>
+                Habilidades
+            </legend>
+            Selecciona tus habilidades:
+            <br>
+            
+            <select name="habilidades" id="habilidad" multiple>
+                <option value="p">Programación</option>
+                <option value="d">Diseño</option>
+                <option value="g">Gestión de proyectos</option>
+                <option value="c">Comunicación</option>
+            </select>
+            <br><br>
+
+
+
+
+
+
+
+        </fieldset>
+
+
+
+    </fieldset>
+
+
+    Comentarios Adicioneles:
+    <br>
+    <textarea rows="5" cols="80"placeholder="Escribe aquí tus comentarios..."></textarea>
+    <br>
+
+    <input type="submit" value="Enviar">
+    <input type="reset" value="Limpiar">
+
+
+
+</body>
+
+</html>
