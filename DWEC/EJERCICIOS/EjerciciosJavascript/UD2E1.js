@@ -77,45 +77,35 @@ Añade el código auxiliar necesario para probar la aplicación.
  */
 
 
+
+
 function dibujarCuadrado(n) {
 
-    let rectangulo = [];
+    let resultado = [];
+    for (let f = 0; f < n; f++) {
 
-    rectangulo.push('*'.repeat(n))
+        let fila = [];
 
-    for (let i = 0; i < n - 2; i++) {
-        rectangulo.push('*' + ' '.repeat(n - 2) + '*');
+        for (let c = 0; c < n; c++) {
+
+            (f === 0 || f === n - 1 || c === 0 || c === n - 1) ? fila[c] = '*' : fila[c] = ' ';
+
+
+
+        }
+        resultado[f] = fila;
     }
 
 
-    if (n > 1) {
-        rectangulo.push('*'.repeat(n));
-    }
 
-
-    return rectangulo;
-
+    return resultado;
 
 }
 
 
+let resultado = dibujarCuadrado(6);
+console.log(resultado);
 
-
-function pruebaRectangulo(n) {
-    let rectangulo = dibujarCuadrado(n);
-
-    rectangulo.forEach(element => {
-        console.log(element);
-
-    });
-
-
-
-
-}
-
-
-pruebaRectangulo(10);
 
 
 
@@ -127,99 +117,40 @@ número indicado. El valor devuelto será un array con cada una de las cadenas q
 rectángulo.
 Añade el código auxiliar necesario para probar la aplicación.
 
-*/
-
-function dibujarTriangulo(n) {
-
-    let triangulo = [];
-
-    for (let i = 0; i < n; i++) {
-
-
-
-        let espacios = ' '.repeat(n - i - 1);
-        let asteriscos = '*'.repeat(2 * i + 1);
-        triangulo.push(espacios + asteriscos);
-
-
-    }
-    return triangulo;
-}
-
-
-
-
-
-
-function probarTriangulo(n) {
-
-    let triangulo = dibujarTriangulo(n);
-
-    triangulo.forEach(linea => {
-        console.log(linea);
-    }
-    );
-
-
-
-}
-probarTriangulo(5);
-
-/**
- * 
- * 5- Crea una función reciba un número y que dibuje un rombo de diagonal del tamaño del
-número indicado. El valor devuelto será un array con cada una de las cadenas que forman el
-rombo.
-Añade el código auxiliar necesario para probar la aplicación.
  */
+function dibujarTriangulo(lines) {
+    let resultado = [];
 
+    for (let i = 0; i < lines; i++) {
+        let fila = [];
+        let cantidad = 2 * i + 1;
+        let espacios = lines - i - 1;
 
+        for (let j = 0; j < espacios; j++) {
+            fila[j] = " ";
+        }
 
+        for (let k = 0; k < cantidad; k++) {
+            fila[espacios + k] = "*";
+        }
 
-function dibujarRombo(n) {
-
-    let rombo = [];
-
-
-    for (let i = 0; i < n; i++) {
-
-
-
-        let espacios = ' '.repeat(n - i - 1);
-        let asteriscos = '*'.repeat(2 * i + 1);
-        rombo.push(espacios + asteriscos);
-
-
-
-
-
-
+        resultado[i] = fila;
     }
 
-
-    for (let i = n-2; i  >= 0; i--) {
-
-
-
-        let espacios = ' '.repeat(n - i - 1);
-        let asteriscos = '*'.repeat(2 * i + 1);
-        rombo.push(espacios + asteriscos);
-
-
-    }
-
-
-    return rombo;
-
-
+    return resultado;
 }
 
-function probarRombo(n) {
-    let rombo = dibujarRombo(n);
-    rombo.forEach(linea => {
-        console.log(linea); 
-    });
-}
+let triangulo = dibujarTriangulo(5);
+console.log(triangulo);
 
 
-probarRombo(5);
+
+
+
+
+
+
+
+
+let trianguloCentrado = dibujarTriangulo(5);
+console.log(trianguloCentrado); 
