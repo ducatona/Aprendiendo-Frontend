@@ -79,7 +79,7 @@ Añade el código auxiliar necesario para probar la aplicación.
 
 
 
-function dibujarCuadrado(n) {
+function dibujarRectangulo(n) {
 
     let resultado = [];
     for (let f = 0; f < n; f++) {
@@ -103,7 +103,7 @@ function dibujarCuadrado(n) {
 }
 
 
-let resultado = dibujarCuadrado(6);
+let resultado = dibujarRectangulo(4);
 console.log(resultado);
 
 
@@ -118,30 +118,105 @@ rectángulo.
 Añade el código auxiliar necesario para probar la aplicación.
 
  */
-function dibujarTriangulo(lines) {
+function dibujarTriangulo(n) {
     let resultado = [];
 
-    for (let i = 0; i < lines; i++) {
-        let fila = [];
-        let cantidad = 2 * i + 1;
-        let espacios = lines - i - 1;
+    for (let i = 0; i < n; i++) {
+        let fila = '';
 
-        for (let j = 0; j < espacios; j++) {
-            fila[j] = " ";
+        //espacios
+        for (let j = 0; j < n - i - 1; j++) {
+            fila += ' ';
         }
 
-        for (let k = 0; k < cantidad; k++) {
-            fila[espacios + k] = "*";
+        // Asteriscos
+        for (let k = 0; k < (2 * i + 1); k++) {
+            fila += '*';
+        }
+
+        resultado[i] = fila;
+    }
+    return resultado;
+    
+}
+
+
+
+
+
+
+
+let prueba = dibujarTriangulo(5);
+console.log(prueba);
+
+
+/**
+ * 
+ * 
+ * 5- Crea una función reciba un número y que dibuje un rombo de diagonal del tamaño del 
+número indicado. El valor devuelto será un array con cada una de las cadenas que forman el 
+rombo.
+Añade el código auxiliar necesario para probar la aplicación.
+ */
+
+
+
+function dibujarRombo(n) {
+    let resultado = [];
+
+    for (let i = 0; i < n; i++) {
+        let fila = '';
+
+        // Espacios para la parte superior del rombo
+        for (let e = 0; e < n - i - 1; e++) {
+            fila += ' ';
+        }
+
+        // Asteriscos para la parte superior del rombo
+        for (let p = 0; p < (2 * i + 1); p++) {
+            fila += '*';
         }
 
         resultado[i] = fila;
     }
 
+    // Asteriscos para la parte inferior del rombo
+    for (let i = n - 2; i >= 0; i--) {
+        let fila = '';
+
+        // Espacios para la parte inferior del rombo
+        for (let e = 0; e < n - i - 1; e++) {
+            fila += ' ';
+        }
+
+        // Asteriscos para la parte inferior del rombo
+        for (let p = 0; p < (2 * i + 1); p++) {
+            fila += '*';
+        }
+
+        resultado[n - 1 + (n - 2 - i)] = fila;
+    }
+
     return resultado;
 }
 
-let triangulo = dibujarTriangulo(5);
-console.log(triangulo);
+let resultado4 = dibujarRombo(6);
+console.log(resultado4);
+
+
+
+/**
+ * 6-Crea una función que dibuje en un alert la figura geométrica indicada por parámetro. Donde 
+el primer parámetro será la función que genera el polígono y el segundo parámetro el número 
+que indica el tamaño del polígono.
+ * 
+ */
+
+
+function mostrarPloligono(){
+
+    
+}
 
 
 
@@ -150,7 +225,3 @@ console.log(triangulo);
 
 
 
-
-
-let trianguloCentrado = dibujarTriangulo(5);
-console.log(trianguloCentrado); 
