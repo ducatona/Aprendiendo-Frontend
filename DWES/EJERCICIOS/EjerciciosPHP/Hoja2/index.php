@@ -13,7 +13,6 @@
     <!-- ejercicio 1-->
 
     <?php
-
     echo "Este es el resultado correcto del primer ejercicio";
     ?>
 

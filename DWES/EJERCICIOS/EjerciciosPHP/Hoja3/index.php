@@ -66,5 +66,35 @@ echo "La nueva fecha y hora es: " . $fecha->format('d-m-Y H:i:s');
 ?>
 
 
+<?php
+// Asignar valores a las variables
+$a = 8;
+$b = 3;
+$c = 5;
+
+// Mostrar los resultados de las comparaciones
+echo "\$a == \$b: " . ($a == $b ? 'true' : 'false') . "<br>";
+echo "\$a != \$b: " . ($a != $b ? 'true' : 'false') . "<br>";
+echo "\$a < \$b: " . ($a < $b ? 'true' : 'false') . "<br>";
+echo "\$a > \$b: " . ($a > $b ? 'true' : 'false') . "<br>";
+echo "\$a >= \$c: " . ($a >= $c ? 'true' : 'false') . "<br>";
+echo "\$a <= \$c: " . ($a <= $c ? 'true' : 'false') . "<br>";
+?>
+
+
+<?php
+// Asignar valores a las variables
+$a = 8;
+$a = 8;
+$b = 3;
+$c = 5;
+
+// Mostrar los resultados de las comparaciones lógicas
+echo "(\$a == \$b) && (\$c > \$b): " . (($a == $b) && ($c > $b) ? 'true' : 'false') . "<br>";
+echo "(\$a == \$b) || (\$b == \$c): " . (($a == $b) || ($b == $c) ? 'true' : 'false') . "<br>";
+echo "(\$b <= \$c): " . (($b <= $c) ? 'true' : 'false') . "<br>";
+?>
+
+
 </body>
 </html>
