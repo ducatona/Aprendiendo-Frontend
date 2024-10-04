@@ -1,10 +1,10 @@
+
 /**
   ejercicio 1:crea u programa en el que crees 4 variables:2 cadenas y 2 numeros ,con los siguientes valores:tu nombre,tu apellido,edad y año de nacimiento
 -muestra un alert las variables introducidas con formato clave valor en donde los valores cadena aparezcan envueltos entre comillas dobles y los valores numericos entre comillas simples
 -muestra en un alert tu nombre y apellidos separados por un salto de linea
 -muestra en un alert la suma de as variables edad y año de nacimiento
 -muestra en un alert la suma de todas las variables */
-
 
 
 // let nombre = "Adrian";
@@ -27,6 +27,9 @@
  * 2-Realiza un programa que solicite números al usuario hasta que introduzca un 0. Y que 
 muestre los valores: máximo, mínimo, suma, media y total de números introducidos.
  */
+
+
+
 
 // let numero = 0;
 // let suma = 0;
@@ -79,147 +82,41 @@ Añade el código auxiliar necesario para probar la aplicación.
 
 function dibujarCuadrado(n) {
 
-    let rectangulo = [];
-
-    rectangulo.push('*'.repeat(n))
-
-    for (let i = 0; i < n - 2; i++) {
-        rectangulo.push('*' + ' '.repeat(n - 2) + '*');
-    }
+    let cuadrado = [];
 
 
-    if (n > 1) {
-        rectangulo.push('*'.repeat(n));
-    }
-
-
-    return rectangulo;
-
-
-}
-
-
-
-
-function pruebaRectangulo(n) {
-    let rectangulo = dibujarCuadrado(n);
-
-    rectangulo.forEach(element => {
-        console.log(element);
-
-    });
-
-
-
-
-}
-
-
-pruebaRectangulo(10);
-
-
-
-
-/**
- * 
- * 4- Crea una función reciba un número y que dibuje un triángulo de altura el tamaño del
-número indicado. El valor devuelto será un array con cada una de las cadenas que forman el
-rectángulo.
-Añade el código auxiliar necesario para probar la aplicación.
-
-*/
-
-function dibujarTriangulo(n) {
-
-    let triangulo = [];
-
-    for (let i = 0; i < n; i++) {
-
-
-
-        let espacios = ' '.repeat(n - i - 1);
-        let asteriscos = '*'.repeat(2 * i + 1);
-        triangulo.push(espacios + asteriscos);
-
+    for (let f; f < n; f++) {
+        let = filas = [f];
+        cuadrado[filas];
+    } for (let c; c < n; c++) {
+        columnas = [c];
+        cuadrado[columnas];
 
     }
-    return triangulo;
-}
+
+    if (c === 0 || c === n - 1 || f === 0 || f === n - 1) {
+
+        cuadrado[c][f] = "*";
 
 
+    } else {
 
 
-
-
-function probarTriangulo(n) {
-
-    let triangulo = dibujarTriangulo(n);
-
-    triangulo.forEach(linea => {
-        console.log(linea);
-    }
-    );
-
-
-
-}
-probarTriangulo(5);
-
-/**
- * 
- * 5- Crea una función reciba un número y que dibuje un rombo de diagonal del tamaño del
-número indicado. El valor devuelto será un array con cada una de las cadenas que forman el
-rombo.
-Añade el código auxiliar necesario para probar la aplicación.
- */
-
-
-
-
-function dibujarRombo(n) {
-
-    let rombo = [];
-
-
-    for (let i = 0; i < n; i++) {
-
-
-
-        let espacios = ' '.repeat(n - i - 1);
-        let asteriscos = '*'.repeat(2 * i + 1);
-        rombo.push(espacios + asteriscos);
-
-
-
-
+        cuadrado[c][f] = '';
 
 
     }
 
 
-    for (let i = n-2; i  >= 0; i--) {
+    return cuadrado;
 
 
 
-        let espacios = ' '.repeat(n - i - 1);
-        let asteriscos = '*'.repeat(2 * i + 1);
-        rombo.push(espacios + asteriscos);
 
 
-    }
 
-
-    return rombo;
 
 
 }
 
-function probarRombo(n) {
-    let rombo = dibujarRombo(n);
-    rombo.forEach(linea => {
-        console.log(linea); 
-    });
-}
-
-
-probarRombo(5);
+dibujarCuadrado(4);
