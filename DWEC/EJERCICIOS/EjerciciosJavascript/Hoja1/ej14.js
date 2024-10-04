@@ -48,5 +48,91 @@ let alumnos = [
             { modulo: "DAW", nota: 6 }
         ]
     }
-
 ]
+
+function actualizarAlumnos(alumnos) {
+
+    for (const alumno of alumnos) {
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+function calcularMedia(alumnos) {
+    let totalNotas = 0;
+    let totalModulos = 0;
+
+    for (const alumno of alumnos) {
+
+
+        for (let i = 0; i < alumno.asignaturas.length; i++) {
+
+            totalNotas += alumno.asignaturas[i].nota; //acede a las notas de las asignaturas y las suma
+            totalModulos += 1; // cuenta los modulos que tiene el las asignatura
+
+        }
+
+        let media = totalNotas / totalModulos;
+
+        return media;
+
+
+    }
+
+
+    function alumnoPromociona(alumnos) {
+
+        pendiente = [];
+
+
+
+        for (const alumno of alumnos) {
+
+            for (let i = 0; i < alumno.asignaturas.length; i++) {
+
+                let aprobados = true;
+                let nota = alumno.asignaturas[i].nota;
+
+                if (nota < 5) {
+                    aprobados = false;
+                }
+            }
+
+        }
+
+
+
+    }
+
+
+}
+
+
+}
+
+
+
+
+
+
+
