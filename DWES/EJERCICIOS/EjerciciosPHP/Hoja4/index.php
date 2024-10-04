@@ -166,7 +166,27 @@
 
     ?>
 
-    <!--Ejercicio 7 -->
+    <!--Ejercicio 8 -->
+
+
+
+
+    <?php
+
+    function factorialNumero($n){
+        $factorial = 1;
+        $resultado = "";
+        for ($i = $n; $i >= 1; $i--) {
+            $factorial *= $i;
+            $resultado .= $i;
+            if ($i > 1) { 
+                $resultado .= " x ";
+            }
+        }
+        echo("El factorial de $n es: $resultado = $factorial");
+    }
+
+    factorialNumero(4);
 
 
 
@@ -174,6 +194,49 @@
 
 
 
+    ?>
+
+
+
+<!--Ejercicio 7 -->
+
+<?php
+
+
+for ($i=0; $i <=10 ; $i++) { 
+    $denominador = pow(2,$i);
+    $resultado = $i . "/" . $denominador;
+    echo($resultado. "<br>");
+}
+    
+
+
+
+
+    
+
+
+
+?>
+
+<!--Ejercicio 9 -->
+
+<?php
+
+function($distancia,$diasEstancia){
+
+    $precioKm = 2.5;
+    $precioBase = $distancia * $precioKm * 2;
+
+if($diasEstancia > 7 && $distancia >800){
+    $precioBase -= $precioBase*0.30;
+}
+}
+
+
+
+
+?>
 
 
 
@@ -211,25 +274,25 @@
 
     <?php
 
-    for($i = 10;$i >=1;$i--){
-        for($j = $i; $j >=1; $j-- ){
+    for ($i = 10; $i >= 1; $i--) {
+        for ($j = $i; $j >= 1; $j--) {
             echo $j . "";
         }
-    echo "<br>";
+        echo "<br>";
     }
     ?>
-<!--Ejercicio 12 -->
+    <!--Ejercicio 12 -->
 
-<?php
-
-for($i = 3;$i<999;$i++){
-    echo "$i" . ' '. esPrimo($i);
+    <?php
 
 
-}
+    for ($i = 3; $i < 999; $i++) {
+        echo "$i" . ' ' . esPrimo($i);
+    }
 
-?>
+    ?>
 
 
 </body>
+
 </html>
