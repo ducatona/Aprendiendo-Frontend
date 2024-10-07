@@ -50,89 +50,103 @@ let alumnos = [
     }
 ]
 
+
+
 function actualizarAlumnos(alumnos) {
 
     for (const alumno of alumnos) {
 
+        alumno.media = calcularMedia(alumno.asignaturas);
+        alumno.promociona = validarPromocion(alumno.asignaturas);
 
-
-
+      
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    imprimirNoPromocionados(alumnos);
+    imprimirPromocionados(alumnos);
 
 
 }
 
 
-function calcularMedia(alumnos) {
+function calcularMedia(asignaturas) {
     let totalNotas = 0;
-    let totalModulos = 0;
+    for (const asignatura of asignaturas) {
 
-    for (const alumno of alumnos) {
+        totalNotas += asignatura.nota;
+    }
+
+    return totalNotas / asignaturas.length;
 
 
-        for (let i = 0; i < alumno.asignaturas.length; i++) {
 
-            totalNotas += alumno.asignaturas[i].nota; //acede a las notas de las asignaturas y las suma
-            totalModulos += 1; // cuenta los modulos que tiene el las asignatura
 
+}
+
+
+function validarPromocion(asignaturas) {
+
+    for (const asignatura of asignaturas) {
+
+        if (asignatura.nota < 5) {
+            return false;
         }
+    }
+    return true;
+}
 
-        let media = totalNotas / totalModulos;
 
-        return media;
+
+function imprimirPromocionados(alumnos) {
+
+    for (let i = 0; i < alumnos.length; i++) {
+
+        if (alumnos[i].promociona) {
+
+            alert(`${i}-${alumnos[i].nombre}-${alumnos[i].media.toFixed(2)}`);
+        }
 
 
     }
 
 
-    function alumnoPromociona(alumnos) {
-
-        pendiente = [];
+}
 
 
 
-        for (const alumno of alumnos) {
+function imprimirNoPromocionados(alumnos) {
 
-            for (let i = 0; i < alumno.asignaturas.length; i++) {
 
-                let aprobados = true;
-                let nota = alumno.asignaturas[i].nota;
 
-                if (nota < 5) {
-                    aprobados = false;
+    for (let i = 0; i < alumnos.length; i++) {
+        if (!alumnos[i].promociona) {
+            let pendientes = [];
+
+
+            for (let j = 0; j < alumnos[i].asignaturas.length; j++) {
+
+                if (alumnos[i].asignaturas[j].nota < 5) {
+
+                    pendientes += alumnos[i].asignaturas[j].modulo;
+
                 }
+
+
+
+              
             }
+           alert(`${i + 1},${alumnos[i].nombre},${pendientes}`);
 
         }
 
-
-
     }
 
-
-}
-
-
 }
 
 
 
 
-
+actualizarAlumnos(alumnos);
 
 
