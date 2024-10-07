@@ -104,7 +104,7 @@ return $original == $reverso;
 
 
 
-}
+
 
 
 ?>
