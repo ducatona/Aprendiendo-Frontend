@@ -121,6 +121,7 @@
 
 
 
+<!-- Ejercicio 6 -->
 
 
     <?php
@@ -135,6 +136,63 @@
 
 
     ?>
+
+    
+
+
+
+
+<!-- Ejercicio 7 -->
+
+
+<?php
+// Función que valida el formato de una cuenta corriente simple
+function validarCuentaCorriente($cuenta) {
+    // Comprobar que la cuenta tiene exactamente 20 caracteres numéricos
+    if (!ctype_digit($cuenta) || strlen($cuenta) !== 20) {
+        return "La cuenta no tiene el formato correcto (debe tener 20 dígitos).";
+    }
+    
+    // Separar los diferentes componentes de la cuenta
+    $entidad = substr($cuenta, 0, 4);    // 4 primeros dígitos: entidad
+    $oficina = substr($cuenta, 4, 4);    // 4 dígitos siguientes: oficina
+    $digitosControl = substr($cuenta, 8, 2);  // 2 dígitos siguientes: dígitos de control
+    $numeroCuenta = substr($cuenta, 10, 10);  // Los últimos 10 dígitos: número de cuenta
+
+    // Mostrar cada parte de la cuenta
+    echo "Entidad: $entidad\n";
+    echo "Oficina: $oficina\n";
+    echo "Dígitos de control: $digitosControl\n";
+    echo "Número de cuenta: $numeroCuenta\n";
+
+    // Si llegamos hasta aquí, significa que la cuenta tiene el formato correcto.
+    return "El formato de la cuenta es correcto.";
+}
+
+// Ejemplo de uso
+$cuenta = "12345678901234567890";  // Ejemplo de cuenta (20 dígitos)
+echo validarCuentaCorriente($cuenta);
+?>
+
+
+
+
+
+<!--Ejercicio 8 -->
+
+
+<?php
+
+$frase = "Comer algas es realmente sano";
+$posicionAlgas = strpos($frase,"algas");
+
+$fraseRemplazada = str_replace("realmente", "muy",  $frase);
+
+$existeAnacardo = strpos($frase,"Anacardo") !== false ? "si":"no";
+
+$invierteOrden = strrev($frase);
+
+?>
 
 
 
